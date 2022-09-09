@@ -1,6 +1,8 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom' // 
 import { Dashboard } from './pages/Dashboard'
+import { SignIn } from './pages/SignIn'
+import { SignUp } from './pages/SignUp'
 
 // import { TaskInput } from './components/TaskInput';
 // import { TaskList } from './components/TaskList';
@@ -105,6 +107,12 @@ function App() {
       {/* Routes tags allows only one route to show at a time */}
         <Routes>
           <Route path = "/dashboard" element = {<Dashboard />}/>
+        </Routes>
+        <Routes>
+          <Route path = "/" element = {<SignIn />}/>
+        </Routes>
+        <Routes>
+          <Route path = "/signup" element = {<SignUp />}/>
         </Routes>
       </div>
     </BrowserRouter>

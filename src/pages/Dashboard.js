@@ -37,7 +37,7 @@ export const Dashboard = () => {
     }, [filterStatus])
 
   return (
-    <div>
+    <div className='Dashboard'>
         <div className='container'>
 
             <div className='header'>
