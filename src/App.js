@@ -1,4 +1,7 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom' // 
+import { Dashboard } from './pages/Dashboard'
+
 // import { TaskInput } from './components/TaskInput';
 // import { TaskList } from './components/TaskList';
 // import { useState, useEffect } from 'react'
@@ -76,29 +79,35 @@ function App() {
   // }, [filterStatus])
 
   return (
-    <div className="App">
+    // main router; allows all routes to connect and function properly
+    <BrowserRouter> 
+      <div className="App">
+        {/* <div className='container'> */}
 
-      {/* <div className='container'> */}
+          {/* <div className='header'>
+            <h1>TODO</h1>
+            <img src='./images/icon-sun.svg' alt='sun'/>
+          </div> */}
 
-        {/* <div className='header'>
-          <h1>TODO</h1>
-          <img src='./images/icon-sun.svg' alt='sun'/>
-        </div> */}
+          {/* ADD TO TASK INPUT COMPONENT */}
+        {/* <TaskInput tasks = {tasks} setTasks = {setTasks}/> */}
 
-        {/* ADD TO TASK INPUT COMPONENT */}
-       {/* <TaskInput tasks = {tasks} setTasks = {setTasks}/> */}
-
-        {/* MAKE A TASK LIST COMPONENT */}
-       {/* <TaskList 
-        tasks = {tasks}
-        setTasks = {setTasks}
-        filterStatus = {filterStatus}
-        setFilterStatus = {setFilterStatus}
-        filteredTasks = {filteredTasks}
-        /> */}
-      {/* </div> */}
-
-    </div>
+          {/* MAKE A TASK LIST COMPONENT */}
+        {/* <TaskList 
+          tasks = {tasks}
+          setTasks = {setTasks}
+          filterStatus = {filterStatus}
+          setFilterStatus = {setFilterStatus}
+          filteredTasks = {filteredTasks}
+          /> */}
+        {/* </div> */}
+      
+      {/* Routes tags allows only one route to show at a time */}
+        <Routes>
+          <Route path = "/dashboard" element = {<Dashboard />}/>
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

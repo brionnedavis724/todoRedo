@@ -1,9 +1,9 @@
 import React from 'react'
-import { TaskInput } from './components/TaskInput';
-import { TaskList } from './components/TaskList';
+import { TaskInput } from '../components/TaskInput';
+import { TaskList } from '../components/TaskList';
 import { useState, useEffect } from 'react'
 import { onSnapshot, collection, doc } from 'firebase/firestore'
-import db from './utils/firebase'
+import db from '../utils/firebase'
 
 export const Dashboard = () => {
 
