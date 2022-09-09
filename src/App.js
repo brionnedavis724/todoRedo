@@ -1,9 +1,9 @@
 import './App.css';
-import { TaskInput } from './components/TaskInput';
-import { TaskList } from './components/TaskList';
-import { useState, useEffect } from 'react'
-import { onSnapshot, collection, doc } from 'firebase/firestore'
-import db from './utils/firebase'
+// import { TaskInput } from './components/TaskInput';
+// import { TaskList } from './components/TaskList';
+// import { useState, useEffect } from 'react'
+// import { onSnapshot, collection, doc } from 'firebase/firestore'
+// import db from './utils/firebase'
 // import { getDefaultNormalizer } from '@testing-library/react';
 
 /* APP TODOS
@@ -30,9 +30,9 @@ How do we GET a collection from our Firestore db?
   
 
 function App() {
-  const [tasks, setTasks] = useState([])
-  const [filteredTasks, setFilteredTasks] = useState(tasks)
-  const [filterStatus, setFilterStatus] = useState("all")
+  // const [tasks, setTasks] = useState([])
+  // const [filteredTasks, setFilteredTasks] = useState(tasks)
+  // const [filterStatus, setFilterStatus] = useState("all")
 
   // useEffect(()=> {
   //   const handleFilter = () => {
@@ -50,53 +50,53 @@ function App() {
   //   handleFilter()
   // },[tasks,filterStatus])
 
-  useEffect(() => {
-    // get data and listens for updates
-    const unsub = onSnapshot(collection(db, "tasks"), (snapshot) => { // reference the collection you want to use then state what you want to do with the info
-      // console.log(snapshot.docs.map(doc => {
-      //   return {...doc.data(), id: doc.id}
-      // }))
-      // console.log(snapshot.docs.map(doc => ({...doc.data(), id: doc.id}))) // this function gives a new array 
-      let todos = snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})) // this function gives a new array
-      setFilteredTasks(todos)
+  // useEffect(() => {
+  //   // get data and listens for updates
+  //   const unsub = onSnapshot(collection(db, "tasks"), (snapshot) => { // reference the collection you want to use then state what you want to do with the info
+  //     // console.log(snapshot.docs.map(doc => {
+  //     //   return {...doc.data(), id: doc.id}
+  //     // }))
+  //     // console.log(snapshot.docs.map(doc => ({...doc.data(), id: doc.id}))) // this function gives a new array 
+  //     let todos = snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})) // this function gives a new array
+  //     setFilteredTasks(todos)
 
-      const handleFilter = () => {
-        if(filterStatus === "active") {
-          setFilteredTasks(todos.filter((task) => task.status === false))
-        } else if(filterStatus === "completed") {
-          setFilteredTasks(todos.filter((task) => task.status === true))
-        } else {
-          setFilteredTasks(todos)
-        }
-      }
-      handleFilter()
-    }) // onSnapshot was imported from firebase. this grabs a snapshot of the data
-    // getData() - not recommended to grab data this way; snapshot is better
-    return unsub
-  }, [filterStatus])
+  //     const handleFilter = () => {
+  //       if(filterStatus === "active") {
+  //         setFilteredTasks(todos.filter((task) => task.status === false))
+  //       } else if(filterStatus === "completed") {
+  //         setFilteredTasks(todos.filter((task) => task.status === true))
+  //       } else {
+  //         setFilteredTasks(todos)
+  //       }
+  //     }
+  //     handleFilter()
+  //   }) // onSnapshot was imported from firebase. this grabs a snapshot of the data
+  //   // getData() - not recommended to grab data this way; snapshot is better
+  //   return unsub
+  // }, [filterStatus])
 
   return (
     <div className="App">
 
-      <div className='container'>
+      {/* <div className='container'> */}
 
-        <div className='header'>
+        {/* <div className='header'>
           <h1>TODO</h1>
           <img src='./images/icon-sun.svg' alt='sun'/>
-        </div>
+        </div> */}
 
         {/* ADD TO TASK INPUT COMPONENT */}
-       <TaskInput tasks = {tasks} setTasks = {setTasks}/>
+       {/* <TaskInput tasks = {tasks} setTasks = {setTasks}/> */}
 
         {/* MAKE A TASK LIST COMPONENT */}
-       <TaskList 
+       {/* <TaskList 
         tasks = {tasks}
         setTasks = {setTasks}
         filterStatus = {filterStatus}
         setFilterStatus = {setFilterStatus}
         filteredTasks = {filteredTasks}
-        />
-      </div>
+        /> */}
+      {/* </div> */}
 
     </div>
   );
