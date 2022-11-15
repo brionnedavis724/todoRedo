@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Login } from '../components/Login' // import component into the Signup page
 
 export const SignIn = () => {
+
+    const emailRef = useRef()
+    const passwordRef = useRef()
+
   return (
     <div>
         {/* display the component(s) imported above */}
@@ -11,6 +15,8 @@ export const SignIn = () => {
            headerStatement = "need an account?"
            link = "sign up"
            href = "/signup" 
+           emailInput = {emailRef}
+           passwordInput = {passwordRef}
         />
     </div>
   )
