@@ -11,7 +11,7 @@ export const SignIn = () => {
         {/* display the component(s) imported above */}
         <Login 
            title = "Sign in"
-           button = " Sign In"
+           button = " Sign In" // how to add a link to button?
            headerStatement = "need an account?"
            link = "sign up"
            href = "/signup" 
